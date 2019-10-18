@@ -44,6 +44,9 @@
             var obj = {ID:r, Gender: s1, Age: s2, Language: Language, Country: Country };
             var stringObj = JSON.stringify(obj);
             $.ajax({
+                headers:{
+                    Accept: "application/json; charset=utf-8"
+                },
                 url: "http://47.105.130.100:8026/DataHelper/EditAdd",
                 data: { ID: 0, type: 2, A: stringObj },
                 success: function (data) {

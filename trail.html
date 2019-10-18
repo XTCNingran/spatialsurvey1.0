@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="dnd.js"></script>
+    
+    <title>Trail Survey</title>
+</head>
+<body>
+            
+
+    <h2>Drag and Drop</h2>
+    <p>Drag the image back and forth between the two div elements.</p>
+                    
+    <div class="group" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p>Icon List</p>
+        <img src="https://source.unsplash.com/300x300/?water" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag1" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?animal" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag2" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?building" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag3" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?water" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag4" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?animal" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag5" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?building" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag6" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?water" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag7" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?animal" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag8" width="150" height="150" display="inline-table">
+        <img src="https://source.unsplash.com/300x300/?building" 
+        draggable="true" ondragstart="drag(event)" class = "image" id="drag9" width="150" height="150" display="inline-table">
+    </div>
+    <button id="btn1" onclick="additem1()">Add Group</button>
+   
+    <div class="group"id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <button type="button" onclick="Delete(this)">Delete</button>
+    </div>
+    
+    <div id="adds"></div>
+    <a href="BasicInfo.html">Next Page</a>      
+</body>
+</html>

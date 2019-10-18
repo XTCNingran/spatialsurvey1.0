@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Spatial Relation Survey 1.0</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <p> Not that You have get familiar with the task. We would like to get your basic information            below:</p>
+    Gender
+    <select id="s1">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><br />
+
+    Age Group
+    <select id="s2">
+        <option value="18-25">18-25</option>
+        <option value="25-30">25-30</option>
+        <option value="35-45">35-45</option>
+        <option value="45-55">45-55</option>
+        <option value="above 55">above 55</option>
+    </select><br />
+    Home Language
+    <input type="text" id="Language" value="" />
+    <br />
+    Residential Country:
+    <input type="text" id="Country" value="" />
+
+    <input type="button" onclick="save()" value="Save" />
+
+    <script>
+        function save() {
+            var s1 = document.getElementById("s1").value;
+            var s2 = document.getElementById("s2").value;
+            var Language = document.getElementById("Language").value;
+            var Country = document.getElementById("Country").value;
+            if (Language == "" || Country == "") {
+                alert("Please complete");
+                return;
+            }
+            var r = Math.floor(Math.random() * 1000000);
+            var obj = {ID:r, Gender: s1, Age: s2, Language: Language, Country: Country };
+            var stringObj = JSON.stringify(obj);
+            $.ajax({
+                url: "http://47.105.130.100:8026/DataHelper/EditAdd",
+                data: { ID: 0, type: 2, A: stringObj },
+                success: function (data) {
+                    if (data) {
+                        location.href = "instruction.html?ID=" + stringObj;
+                    } else {
+                        alert("error");
+                    }
+                }
+            })
+        }
+
+
+    </script>
+</body>
+</html>
